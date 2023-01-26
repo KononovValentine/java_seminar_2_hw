@@ -67,7 +67,7 @@ public interface Functions {
         return stringBuilder.toString();
     }
 
-
+// создает логгер
     static Logger createLogger() {
         Logger logger = Logger.getAnonymousLogger();
         SimpleFormatter formatter = new SimpleFormatter();
@@ -82,6 +82,7 @@ public interface Functions {
         return logger;
     }
 
+    // записывает текст в файл
     static void writeFile(String text, String filePath, Logger logger) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(text);
@@ -92,6 +93,7 @@ public interface Functions {
         }
     }
 
+    // алгоритм пузырьковой сортировки
     public static void bubbleSort(int[] sortArr, Logger logger) {
         int iteration = 0;
         for (int i = 0; i < sortArr.length - 1; i++) {
@@ -107,6 +109,7 @@ public interface Functions {
         }
     }
 
+    // перезаписывает файл вместе с предыдущим и новым значениями
     public static void rewriteFile(String newText, Logger logger) {
         StringBuilder stringBuilder = new StringBuilder();
         String file = Functions.readFile("sortedArray.txt");
